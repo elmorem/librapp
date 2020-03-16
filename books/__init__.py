@@ -4,6 +4,7 @@ import datetime
 from bson.objectid import ObjectId
 from flask import Flask
 from pymongo import MongoClient
+from books import *
 
 class JSONEncoder(json.JSONEncoder):
     ''' extend json-encoder class'''
@@ -15,7 +16,7 @@ class JSONEncoder(json.JSONEncoder):
             return str(o)
         return json.JSONEncoder.default(self, o)
 
-app.json_encoder = JSONEncoder
+json_encoder = JSONEncoder
 
 def create_app(test_config=None):
     # create and configure the app
