@@ -5,14 +5,23 @@ from bson.objectid import ObjectId
 from flask import Flask
 from pymongo import PyMongo
 
+class JSONEncoder(json.JSONEncoder):
+    ''' extend json-encoder class'''
+
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        if isinstance(o, datetime.datetime):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
+app.json_encoder = JSONEncoder
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
-    )
+    app.config['MONGO_URI'] =os.environ.get('DB')
+    mongo=PyMongo(app)
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
