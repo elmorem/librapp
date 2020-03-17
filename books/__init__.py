@@ -3,7 +3,9 @@ import json
 import datetime
 from bson.objectid import ObjectId
 from flask import Flask
-
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from flask_login import LoginManager
 
 class JSONEncoder(json.JSONEncoder):
     ''' extend json-encoder class'''
@@ -25,7 +27,7 @@ def create_app(test_config=None):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db = SQLAlchemy(app)
     Migrate(app,db)
-    
+
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
