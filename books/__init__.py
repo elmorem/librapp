@@ -3,8 +3,7 @@ import json
 import datetime
 from bson.objectid import ObjectId
 from flask import Flask
-from flask_pymongo import PyMongo 
-from pymongo import MongoClient
+
 
 class JSONEncoder(json.JSONEncoder):
     ''' extend json-encoder class'''
@@ -21,8 +20,12 @@ json_encoder = JSONEncoder
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
-    app.config['MONGO_URI'] =os.environ.get('DB')
-    mongo=MongoClient()
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    db = SQLAlchemy(app)
+    Migrate(app,db)
+    
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
