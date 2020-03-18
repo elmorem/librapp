@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from  import SQLAlchemy
 from books import db 
 
 
@@ -10,6 +10,8 @@ class Book(db.Model):
     publisher= db.Column(db.String(128))
     pub_location= db.Column(db.String(128))
     pub_date= db.Column(db.Integer)
+    other=db.Column(db.String(256))
+    note=db.Column(db.TEXT)
 
     def __init__(self, author, title, publisher, location, date):
         self.author=author
