@@ -34,10 +34,3 @@ def create_app(test_config=None):
         return 'Hello, World!'
 
     return app
-
-
-    # return app
-    # return app
-    # return app
-    # return app
-    # return app
