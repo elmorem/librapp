@@ -43,10 +43,3 @@ def user():
             return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
 
 
-
-# def user():
-#     if request.method == 'GET':
-#         query = request.args
-#         data = mongo.db.users.find_one(query)
-#         return jsonify(data), 200
-
