@@ -3,15 +3,15 @@ from  import SQLAlchemy
 from books import db 
 
 
-# class Book(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     author = db.Column(db.String(128))
-#     title = db.Column(db.String(256))
-#     publisher= db.Column(db.String(128))
-#     pub_location= db.Column(db.String(128))
-#     pub_date= db.Column(db.Integer)
-#     other=db.Column(db.String(256))
-#     note=db.Column(db.TEXT)
+class Book(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    author = db.Column(db.String(128))
+    title = db.Column(db.String(256))
+    publisher= db.Column(db.String(128))
+    pub_location= db.Column(db.String(128))
+    pub_date= db.Column(db.Integer)
+    other=db.Column(db.String(256))
+    note=db.Column(db.TEXT)
 
 #     def __init__(self, author, title, publisher, location, date):
 #         self.author=author
