@@ -44,13 +44,6 @@ def user():
 
 
 
-#     data = request.get_json()
-#     if request.method == 'POST':
-#         if data.get('name', None) is not None and data.get('email', None) is not None:
-#             mongo.db.users.insert_one(data)
-#             return jsonify({'ok': True, 'message': 'User created successfully!'}), 200
-#         else:
-#             return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
 
 #     if request.method == 'DELETE':
 #         if data.get('email', None) is not None:
