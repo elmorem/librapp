@@ -45,13 +45,7 @@ def user():
 
 
 
-#     if request.method == 'DELETE':
-#         if data.get('email', None) is not None:
-#             db_response = mongo.db.users.delete_one({'email': data['email']})
-#             if db_response.deleted_count == 1:
-#                 response = {'ok': True, 'message': 'record deleted'}
-#             else:
-#                 response = {'ok': True, 'message': 'no record found'}
+
 #             return jsonify(response), 200
 #         else:
 #             return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
