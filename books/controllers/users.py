@@ -46,11 +46,6 @@ def user():
 
 
 
-#             return jsonify(response), 200
-#         else:
-#             return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
-
-#     if request.method == 'PATCH':
 #         if data.get('query', {}) != {}:
 #             mongo.db.users.update_one(
 #                 data['query'], {'$set': data.get('payload', {})})
