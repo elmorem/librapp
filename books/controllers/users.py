@@ -43,12 +43,6 @@ def user():
             return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
 
 
-# @app.route('/user', methods=['GET', 'POST', 'DELETE', 'PATCH'])
-# def user():
-#     if request.method == 'GET':
-#         query = request.args
-#         data = mongo.db.users.find_one(query)
-#         return jsonify(data), 200
 
 #     data = request.get_json()
 #     if request.method == 'POST':
