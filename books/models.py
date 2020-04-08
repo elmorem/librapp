@@ -26,3 +26,5 @@ class User(db.Model):
     last_name= db.Column(db.String(128))
     username= db.Column(db.String(128))
     password= HASH
+
+    
