@@ -1,0 +1,8 @@
+FUNCTIONALITY
+1. store bibliographic records
+2. Import lists of references from a large number of sources
+3. easy api queries to related source3s like amazon and google scholar
+
+IMPLEMENTATION
+
+LIBRARIES TOOLS
